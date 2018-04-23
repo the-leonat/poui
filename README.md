@@ -8,7 +8,20 @@ You can install the latest version of POUI from within Processing via the menus 
 
 POUI consists of two interface classes `Renderable` and `Touchable` and a bit of glue code you have to implement.
 
-Make sure your interactable object implements both interfaces.
+Make sure your interactable object implements both interfaces and also add it to your POUI instance.
+
+```
+void setup() {
+    POUI p = new POUI(this);
+    MyObject o = new MyObject();
+    p.addRenderable(o);
+    p.addTouchable(o);
+}
+
+void draw() {
+    p.render();
+}
+```
 
 ## Interface Methods
 These are the interface methods you have to implement.
