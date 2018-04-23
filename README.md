@@ -12,7 +12,7 @@ Make sure your interactable object implements both interfaces and also add it to
 
 ```
 void setup() {
-    POUI p = new POUI(this);
+    OUI p = new OUI(this);
     MyObject o = new MyObject();
     p.addRenderable(o);
     p.addTouchable(o);
