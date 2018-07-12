@@ -46,6 +46,14 @@ public class OUI {
   public void addRenderable(Renderable _r) {
     this.rList.add(_r);
   }
+  
+  public void removeRenderable(Renderable _r) {
+	  this.rList.remove(_r);
+  }
+  
+  public void removeTouchable(Touchable _t) {
+	  this.tList.remove(_t);
+  }
 
   private void initTouchSurface() {
     ts = p.createGraphics(p.sketchWidth(), p.sketchHeight());
@@ -59,7 +67,7 @@ public class OUI {
     for (Renderable r : this.rList) {
       p.pushMatrix();
       r.applyTransformation(p.g);
-      r.render();
+      r.render(p.g);
       p.popMatrix();
     }
   }
